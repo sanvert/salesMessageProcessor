@@ -15,7 +15,8 @@ public class SalesMessageAdapter implements MessageAdapter {
         Matcher m = messageType2Pattern.matcher(content);
         SalesMessage message = m.find() ? new SalesMessage(Integer.valueOf(m.group(1)),
                                                         m.group(2),
-                                                        Double.valueOf(m.group(3))) : new SalesMessage();
+                                                        Double.valueOf(m.group(3))) :
+                                            new SalesMessage(false);
 
         return message;
     }

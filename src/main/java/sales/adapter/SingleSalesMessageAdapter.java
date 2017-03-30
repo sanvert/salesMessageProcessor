@@ -15,7 +15,7 @@ public class SingleSalesMessageAdapter implements MessageAdapter {
         Matcher m = messageType1Pattern.matcher(content);
         SalesMessage message = m.find() ? new SalesMessage(1, m.group(1),
                                                             Double.valueOf(m.group(2)))
-                                        : new SalesMessage();
+                                        : new SalesMessage(false);
 
         return message;
     }

@@ -14,7 +14,7 @@ public class SalesUpdateMessage extends SalesMessage {
     }
 
     public SalesUpdateMessage() {
-        super();
+        super(false);
     }
 
     public UpdateOperationType getOperationType() {

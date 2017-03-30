@@ -16,8 +16,8 @@ public class SalesMessage {
         this.price = price;
     }
 
-    public SalesMessage() {
-        this.valid = false;
+    public SalesMessage(boolean valid) {
+        this.valid = valid;
     }
 
     public int getAmount() {

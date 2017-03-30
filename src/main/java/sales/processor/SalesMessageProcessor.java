@@ -29,11 +29,12 @@ public class SalesMessageProcessor implements MessageProcessor<SalesMessage> {
                                                                                 messageAnalytics.increaseAndGetCount();
                                                                                 return value;
                                                                             });
-        salesRepository.getItemCollection().computeIfAbsent(message.getItemType(), key -> {PriceAmountPairs pMap = new PriceAmountPairs();
-                                                                                                pMap.addPriceAmountPair(message.getPrice(), message.getAmount());
-                                                                                                messageAnalytics.increaseAndGetCount();
-                                                                                                return pMap;
-                                                                                            });
+        salesRepository.getItemCollection()
+                .computeIfAbsent(message.getItemType(), key -> {PriceAmountPairs pMap = new PriceAmountPairs();
+                                                                                pMap.addPriceAmountPair(message.getPrice(), message.getAmount());
+                                                                                messageAnalytics.increaseAndGetCount();
+                                                                                return pMap;
+                                                                            });
 
         return MessageUtils.PROCESSED;
     }

@@ -29,7 +29,7 @@ public class SalesMessageProcessorTest {
 
     @Test
     public void shouldReturnInvalidForInvalidMessage() {
-        SalesMessage message = new SalesMessage();
+        SalesMessage message = new SalesMessage(false);
         String result = processor.process(message);
         assertEquals(result, MessageUtils.INVALID_MSG);
     }
