@@ -13,6 +13,10 @@ public class SalesRepository {
 
     private static SalesRepository salesRepository;
 
+    private SalesRepository() {
+        //Private constructor to make a singleton object.
+    }
+
     public static SalesRepository getInstance() {
         if(salesRepository == null) {
             salesRepository = new SalesRepository();

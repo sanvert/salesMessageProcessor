@@ -13,6 +13,10 @@ public class UpdateOperationRepository {
 
     private static UpdateOperationRepository updateOperationRepository;
 
+    private UpdateOperationRepository() {
+        //Private constructor to make a singleton object.
+    }
+
     public static UpdateOperationRepository getInstance() {
         if(updateOperationRepository == null) {
             updateOperationRepository = new UpdateOperationRepository();

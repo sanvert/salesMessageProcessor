@@ -18,6 +18,10 @@ public class MessageAnalytics {
     private static AnalyticsRule interimRule;
     private static AnalyticsRule generalRule;
 
+    private MessageAnalytics() {
+        //Private constructor to make a singleton object.
+    }
+
     public static MessageAnalytics getInstance() {
         if(messageAnalytics == null) {
             salesRepository = SalesRepository.getInstance();
